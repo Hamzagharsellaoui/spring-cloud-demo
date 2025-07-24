@@ -6,4 +6,5 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/spring-cloud-samples/spring-cloud-intro-demo-config
+          uri: https://github.com/Hamzagharsellaoui/spring-cloud-demo.git
+          search-paths: config-repo/spring-cloud-intro-demo-config

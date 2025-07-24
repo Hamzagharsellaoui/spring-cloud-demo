@@ -7,5 +7,5 @@ spring:
       server:
         git:
           uri: https://github.com/Hamzagharsellaoui/spring-cloud-demo.git
-          search-paths: config-repo/spring-cloud-intro-demo-config/application.properties
+          search-paths: config-repo/spring-cloud-intro-demo-config
           default-label: main

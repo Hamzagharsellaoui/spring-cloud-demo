@@ -16,5 +16,3 @@ logging:
   level:
     org.springframework: info
     io.github.resilience4j: debug
-
-

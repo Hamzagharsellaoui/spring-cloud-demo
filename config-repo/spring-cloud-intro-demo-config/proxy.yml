@@ -5,10 +5,33 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: fraud
+        # Fraud Verifier Route
+        - id: fraud-verifier
           uri: lb://fraud-verifier
           predicates:
             - Path=/fraud-verifier/**
+          filters:
+            - StripPrefix=1
+            - name: Retry
+              args:
+                retries: 3
+
+        # Card Service Route
+        - id: card-service
+          uri: lb://card-service
+          predicates:
+            - Path=/card/**
+          filters:
+            - StripPrefix=1
+            - name: Retry
+              args:
+                retries: 3
+
+        # User Service Route
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/user/**
           filters:
             - StripPrefix=1
             - name: Retry

@@ -16,6 +16,8 @@ services:
       - '9888:9888'
     expose:
       - 9888
+    environment:
+      - DISCOVERY_SERVICE_URL=http://my-eureka-service:8761/eureka
     depends_on:
       my-eureka-service:
           condition: service_healthy

@@ -1,7 +1,6 @@
 server:
   port: 8761
 
-
 eureka:
   client:
     registerWithEureka: false
@@ -10,9 +9,11 @@ management:
   endpoints:
     web:
       exposure:
-        include:
-          - metrics
-          - prometheus
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
 spring:
   application:
     name: eureka-server

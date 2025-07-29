@@ -3,4 +3,4 @@ spring:
     name: proxy
 
   config:
-    import: "optional:configserver:http://localhost:9888"
+    import: "optional:configserver:${CONFIG_SERVICE:http://localhost:9888}"

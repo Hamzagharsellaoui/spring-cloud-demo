@@ -1,0 +1,21 @@
+services:
+  my-eureka-service:
+    build: ./eureka-server
+    container_name: my-eureka-service
+    ports:
+      - '8761:8761'
+    expose:
+      - 8761
+    healthcheck:
+      test: ["CMD","curl","-f","http://localhost:8761/actuator/health"]
+      interval: 10s
+  my-config-service:
+    build: ./config-server
+    container_name: my-config-service
+    ports:
+      - '9888:9888'
+    expose:
+      - 9888
+    depends_on:
+      my-eureka-service:
+          condition: service_healthy

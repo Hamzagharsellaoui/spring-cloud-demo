@@ -76,8 +76,8 @@ services:
     expose:
       - 9083
     environment:
-      - DISCOVERY_SERVICE_URL=http://my-eureka-service:8761/eureka
       - CONFIG_SERVICE=http://my-config-service:9888/eureka
+      - DISCOVERY_SERVICE_URL=http://my-eureka-service:8761/eureka
     depends_on:
       my-config-service:
         condition: service_healthy

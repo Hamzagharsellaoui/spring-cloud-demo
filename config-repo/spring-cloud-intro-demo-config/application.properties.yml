@@ -1,9 +1,7 @@
 eureka:
   client:
-    register-with-eureka: true
-    fetch-registry: true
     service-url:
-      defaultZone: ${DISCOVERY_SERVICE_URL:http://my-eureka-service:8761/eureka}
+      defaultZone: ${DISCOVERY_SERVICE_URL:http://localhost:8761/eureka}
   instance:
     prefer-ip-address: true
 
@@ -18,3 +16,8 @@ logging:
   level:
     org.springframework: info
     io.github.resilience4j: debug
+management:
+  endpoints:
+    web:
+      exposure:
+        include=*:

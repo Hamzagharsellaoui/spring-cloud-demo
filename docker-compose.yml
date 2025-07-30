@@ -38,7 +38,7 @@ services:
       - 9080
     environment:
       - DISCOVERY_SERVICE_URL=http://my-eureka-service:8761/eureka
-      - CONFIG_SERVICE=http://my-config-service:9888/eureka
+      - CONFIG_SERVICE=http://my-config-service:9888
     depends_on:
       my-config-service:
           condition: service_healthy
@@ -51,7 +51,7 @@ services:
       - 9082
     environment:
       - DISCOVERY_SERVICE_URL=http://my-eureka-service:8761/eureka
-      - CONFIG_SERVICE=http://my-config-service:9888/eureka
+      - CONFIG_SERVICE=http://my-config-service:9888
     depends_on:
       my-config-service:
         condition: service_healthy
@@ -64,7 +64,7 @@ services:
       - 9086
     environment:
       - DISCOVERY_SERVICE_URL=http://my-eureka-service:8761/eureka
-      - CONFIG_SERVICE=http://my-config-service:9888/eureka
+      - CONFIG_SERVICE=http://my-config-service:9888
     depends_on:
       my-config-service:
         condition: service_healthy
@@ -76,7 +76,7 @@ services:
     expose:
       - 9083
     environment:
-      - CONFIG_SERVICE=http://my-config-service:9888/eureka
+      - CONFIG_SERVICE=http://my-config-service:9888
       - DISCOVERY_SERVICE_URL=http://my-eureka-service:8761/eureka
     depends_on:
       my-config-service:
